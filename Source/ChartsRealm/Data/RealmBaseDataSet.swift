@@ -250,8 +250,8 @@ public class RealmBaseDataSet: ChartBaseDataSet
         _lastStart = start
         _lastEnd = endValue
         
-        _yMin = DBL_MAX
-        _yMax = -DBL_MAX
+        _yMin = Double.greatestFiniteMagnitude
+        _yMax = -Double.greatestFiniteMagnitude
         
         for i in start.stride(through: endValue, by: 1)
         {
@@ -270,7 +270,7 @@ public class RealmBaseDataSet: ChartBaseDataSet
             }
         }
         
-        if (_yMin == DBL_MAX)
+        if (_yMin == Double.greatestFiniteMagnitude)
         {
             _yMin = 0.0
             _yMax = 0.0

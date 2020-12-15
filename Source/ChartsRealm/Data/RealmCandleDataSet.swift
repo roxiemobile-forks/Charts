@@ -106,8 +106,8 @@ public class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChar
         _lastStart = start
         _lastEnd = end
         
-        _yMin = DBL_MAX
-        _yMax = -DBL_MAX
+        _yMin = Double.greatestFiniteMagnitude
+        _yMax = -Double.greatestFiniteMagnitude
         
         for i in start.stride(through: endValue, by: 1)
         {
