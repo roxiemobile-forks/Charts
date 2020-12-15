@@ -600,7 +600,7 @@ open class LineChartRenderer: LineRadarChartRenderer
                             x: pt.x,
                             y: pt.y - CGFloat(valOffset) - valueFont.lineHeight),
                         align: .center,
-                        attributes: [NSFontAttributeName: valueFont, NSForegroundColorAttributeName: dataSet.valueTextColorAt(j)])
+                        attributes: [NSAttributedString.Key.font: valueFont, NSAttributedString.Key.foregroundColor: dataSet.valueTextColorAt(j)])
                 }
             }
         }

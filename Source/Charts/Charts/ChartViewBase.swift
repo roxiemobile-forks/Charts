@@ -342,14 +342,14 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
                     text: noDataText,
                     point: CGPoint(x: frame.width / 2.0, y: y),
                     align: .center,
-                    attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: infoTextColor]
+                    attributes: [NSAttributedString.Key.font: infoFont, NSAttributedString.Key.foregroundColor: infoTextColor]
                 )
                 y = y + infoFont.lineHeight
             }
             
             if (noDataTextDescription != nil && (noDataTextDescription!).count > 0)
             {
-                ChartUtils.drawText(context: context, text: noDataTextDescription!, point: CGPoint(x: frame.width / 2.0, y: y), align: .center, attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: infoTextColor])
+                ChartUtils.drawText(context: context, text: noDataTextDescription!, point: CGPoint(x: frame.width / 2.0, y: y), align: .center, attributes: [NSAttributedString.Key.font: infoFont, NSAttributedString.Key.foregroundColor: infoTextColor])
             }
             
             return
@@ -372,7 +372,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
         
         let frame = self.bounds
         
-        var attrs = [String : AnyObject]()
+        var attrs = [NSAttributedString.Key: Any]()
         
         var font = descriptionFont
         
@@ -386,8 +386,8 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
             #endif
         }
         
-        attrs[NSFontAttributeName] = font
-        attrs[NSForegroundColorAttributeName] = descriptionTextColor
+        attrs[NSAttributedString.Key.font] = font
+        attrs[NSAttributedString.Key.foregroundColor] = descriptionTextColor
 
         if descriptionTextPosition == nil
         {
