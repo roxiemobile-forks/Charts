@@ -368,7 +368,7 @@ open class ChartLegendRenderer: ChartRendererBase
                     
                     if (direction == .rightToLeft)
                     {
-                        posX -= (labels[i] as NSString!).size(withAttributes: [NSAttributedString.Key.font: labelFont]).width
+                        posX -= (labels[i] as! NSString).size(withAttributes: [NSAttributedString.Key.font: labelFont]).width
                     }
                     
                     if (!wasStacked)

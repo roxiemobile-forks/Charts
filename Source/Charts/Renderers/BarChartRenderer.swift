@@ -516,9 +516,9 @@ open class BarChartRenderer: ChartDataRendererBase
                 // check outofbounds
                 if (CGFloat(index) < (CGFloat(dataProvider.chartXMax) * animator.phaseX) / CGFloat(setCount))
                 {
-                    let e = set.entryForXIndex(index) as! BarChartDataEntry!
+                    let e = set.entryForXIndex(index) as! BarChartDataEntry
                     
-                    if (e === nil || e!.xIndex != index)
+                    if (e === nil || e.xIndex != index)
                     {
                         continue
                     }
@@ -539,7 +539,7 @@ open class BarChartRenderer: ChartDataRendererBase
                     }
                     else
                     {
-                        y1 = e!.value
+                        y1 = e.value
                         y2 = 0.0
                     }
                     
